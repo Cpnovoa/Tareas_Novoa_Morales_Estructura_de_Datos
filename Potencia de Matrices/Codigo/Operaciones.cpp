@@ -19,9 +19,9 @@
 
 using namespace std;
 
-
-// Name:       proceso()
-// Purpose:    Implementation of proceso()
+////////////////////////////////////////////////////////////////////////
+// Name:       potenciaMatriz()
+// Purpose:    Implementation of potenciaMatriz()
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
@@ -171,8 +171,8 @@ void Operaciones::imprimir(int** matriz, int tam)
 }
 
 ////////////////////////////////////////////////////////////////////////
-// Name:       nMatriz()
-// Purpose:    Implementation of nMatriz()
+// Name:       crearMatriz()
+// Purpose:    Implementation of crearMatriz()
 // Return:     int**
 ////////////////////////////////////////////////////////////////////////
 
@@ -190,7 +190,7 @@ int** Operaciones::crearMatriz(int tam)
 ////////////////////////////////////////////////////////////////////////
 // Name:       copiarMatriz()
 // Purpose:    Implementation of copiarMatriz()
-// Return:     int**
+// Return:     void
 ////////////////////////////////////////////////////////////////////////
 
 void Operaciones::copiarMatriz(int **matriz2, int **matriz1, int tam)

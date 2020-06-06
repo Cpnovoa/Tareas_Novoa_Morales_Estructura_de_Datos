@@ -1,6 +1,3 @@
-#ifndef OPERACIONES_H_INCLUDED
-#define OPERACIONES_H_INCLUDED
-
 /******************************************************************
 *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE              *
 * CARRERA: Ingenieria de Software                                 *
@@ -9,6 +6,10 @@
 * Author:  Ricardo Morales, Christian Novoa		                  *
 * NRC: 6396                                                       *
 ******************************************************************/
+
+#ifndef OPERACIONES_H_INCLUDED
+#define OPERACIONES_H_INCLUDED
+
 
 using namespace std;
 
