@@ -167,7 +167,7 @@ int main(int argc, char** argv) {
     C = A = B = ++C;
     cout << "A = " << A << "\n";
     cout << "B = " << B << "\n";
-    cout << "B = " << B << endl;
+    cout << "C = " << C << endl;
     cout << "........................." << endl;
     cout << "C = " << C << endl;
     cout << "A != B " << ( (A!=B)?"  True \n": "  False  \n");
