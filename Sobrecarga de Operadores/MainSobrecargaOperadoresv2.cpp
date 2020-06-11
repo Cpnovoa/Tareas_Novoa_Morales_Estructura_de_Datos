@@ -37,6 +37,9 @@ public:
     Pareja& operator = (const Pareja &p);
     Pareja& operator ++();
     bool    operator ==(const Pareja &p) const;
+    bool    operator !=(const Pareja &p) const;
+    bool    operator >=(const Pareja &p) const;
+    bool    operator <=(const Pareja &p) const;
 
     // operadores no miembros
     friend ostream& operator << (ostream &o,const Pareja &p);
@@ -101,6 +104,21 @@ bool Pareja::operator == (const Pareja &p) const
     return this->a == p.a && this->b == p.b;
 }
 
+bool Pareja::operator != (const Pareja &p) const
+{
+    return this->a != p.a && this->b != p.b;
+}
+
+bool Pareja::operator <= (const Pareja &p) const
+{
+    return this->a <= p.a && this->b <= p.b;
+}
+
+bool Pareja::operator >= (const Pareja &p) const
+{
+    return this->a >= p.a && this->b >= p.b;
+}
+
 // implemetaci¢n de operadores no miembros
 ostream& operator << (ostream &o,const Pareja &p)
 {
@@ -150,6 +168,17 @@ int main(int argc, char** argv) {
     cout << "A = " << A << "\n";
     cout << "B = " << B << "\n";
     cout << "B = " << B << endl;
+    cout << "........................." << endl;
+    cout << "C = " << C << endl;
+    cout << "A != B " << ( (A!=B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+    ++B;
+    cout << "C = " << C << endl;
+    cout << "A <= B " << ( (A<=B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+    
+    cout << "C = " << C << endl;
+    cout << "A >= B " << ( (A>=B)?"  True \n": "  False  \n");
     cout << "........................." << endl;
 	return 0;
 }
