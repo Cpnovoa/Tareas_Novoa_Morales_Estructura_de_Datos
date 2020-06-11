@@ -36,10 +36,13 @@ public:
     Pareja& operator / (const Pareja &p);
     Pareja& operator = (const Pareja &p);
     Pareja& operator ++();
+    Pareja& operator --();
     bool    operator ==(const Pareja &p) const;
     bool    operator !=(const Pareja &p) const;
     bool    operator >=(const Pareja &p) const;
     bool    operator <=(const Pareja &p) const;
+    bool    operator < (const Pareja &p) const;
+    bool    operator > (const Pareja &p) const;
 
     // operadores no miembros
     friend ostream& operator << (ostream &o,const Pareja &p);
@@ -96,6 +99,26 @@ Pareja& Pareja::operator ++ ()
     this->a ++;
     this->b ++;
     return *this;
+}
+
+//....................................
+Pareja& Pareja::operator -- ()
+{
+    this->a --;
+    this->b --;
+    return *this;
+}
+
+//....................................
+bool Pareja::operator < (const Pareja &p) const
+{
+    return (this->a < p.a) && (this->b < p.b);
+}
+
+//....................................
+bool Pareja::operator > (const Pareja &p) const
+{
+    return (this->a > p.a) && (this->b > p.b);
 }
 
 //....................................
@@ -168,6 +191,23 @@ int main(int argc, char** argv) {
     cout << "A = " << A << "\n";
     cout << "B = " << B << "\n";
     cout << "C = " << C << endl;
+    cout << "........................." << endl; 
+    C = A = B = --C;
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "........................." << endl;
+    ++A;
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "A < B " << ( (A<B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+    ++A;
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    cout << "C = " << C << endl;
+    cout << "A > B " << ( (A>B)?"  True \n": "  False  \n");
     cout << "........................." << endl;
     cout << "C = " << C << endl;
     cout << "A != B " << ( (A!=B)?"  True \n": "  False  \n");
