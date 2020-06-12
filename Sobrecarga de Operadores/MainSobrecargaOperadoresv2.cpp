@@ -201,6 +201,9 @@ int main(int argc, char** argv) {
     cout << "B = " << B << "\n";
     cout << "C = " << C << endl;
     cout << "........................." << endl; 
+    --C;
+    cout << "--C = " << C << endl;
+    cout << "........................." << endl;
     C = A = B = --C;
     cout << "A = " << A << "\n";
     cout << "B = " << B << "\n";
