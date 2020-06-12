@@ -35,6 +35,7 @@ public:
     Pareja& operator * (const Pareja &p);
     Pareja& operator / (const Pareja &p);
     Pareja& operator = (const Pareja &p);
+    Pareja& operator += (const Pareja &p);
     Pareja& operator ++();
     Pareja& operator --();
     bool    operator ==(const Pareja &p) const;
@@ -98,6 +99,14 @@ Pareja& Pareja::operator ++ ()
 {
     this->a ++;
     this->b ++;
+    return *this;
+}
+
+//....................................
+Pareja& Pareja::operator += (const Pareja &p)
+{
+    this->a += p.a;
+    this->b += p.b;
     return *this;
 }
 
@@ -216,9 +225,15 @@ int main(int argc, char** argv) {
     cout << "C = " << C << endl;
     cout << "A <= B " << ( (A<=B)?"  True \n": "  False  \n");
     cout << "........................." << endl;
-    
+    //
     cout << "C = " << C << endl;
     cout << "A >= B " << ( (A>=B)?"  True \n": "  False  \n");
+    cout << "........................." << endl;
+    //	
+    cout << "A = " << A << "\n";
+    cout << "B = " << B << "\n";
+    A+=B;
+    cout << "A+=B = " << A << endl;
     cout << "........................." << endl;
 	return 0;
 }
