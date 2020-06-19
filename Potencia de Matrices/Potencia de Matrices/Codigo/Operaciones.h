@@ -1,3 +1,6 @@
+#ifndef OPERACIONES_H_INCLUDED
+#define OPERACIONES_H_INCLUDED
+
 /******************************************************************
 *            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE              *
 * CARRERA: Ingenieria de Software                                 *
@@ -7,21 +10,23 @@
 * NRC: 6396                                                       *
 ******************************************************************/
 
-#ifndef OPERACIONES_H_INCLUDED
-#define OPERACIONES_H_INCLUDED
-
-
 using namespace std;
 
 class Operaciones{
 public:
-    void potenciaMatriz(int** , int** , int);
-    void encerar(int**, int);
-    void llenarMatriz(string, int**, int);
-    void llenarMatrizAleatoria(int**, int);
-    void imprimir(int**, int);
+    template <typename T, typename T2>
+    void potenciaMatriz(T** , T2** , int);
+    template <typename T>
+    void encerar(T**, int);
+    template <typename T>
+    void llenarMatriz(string, T**, int);
+    template <typename T>
+    void llenarMatrizAleatoria(T**, int);
+    template <typename T>
+    void imprimir(T**, int);
     int** crearMatriz(int);
-    void copiarMatriz(int **, int **, int );
+    template <typename T, typename T2>
+    void copiarMatriz(T **, T2 **, int );
     void ingresaNumericos(char *, int *);
 };
 

@@ -19,16 +19,17 @@
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////
+
 // Name:       potenciaMatriz()
 // Purpose:    Implementation of potenciaMatriz()
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Operaciones::potenciaMatriz(int** matriz, int** matrizResult, int tam)
+template <typename T, typename T2>
+void Operaciones::potenciaMatriz(T** matriz, T2** matrizResult, int tam)
 {
 	int num = 0, i, j, h, k;
-    int** matrizAux; int** matrizAux2;
+    T** matrizAux; T** matrizAux2;
 
     matrizAux = crearMatriz(tam);
     encerar(matrizAux, tam);
@@ -77,7 +78,8 @@ void Operaciones::potenciaMatriz(int** matriz, int** matrizResult, int tam)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Operaciones::encerar(int **matriz, int tam)
+template <typename T>
+void Operaciones::encerar(T **matriz, int tam)
 {
 	int i, j;
 	for (i = 0; i < tam; i++)
@@ -95,7 +97,8 @@ void Operaciones::encerar(int **matriz, int tam)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Operaciones::llenarMatriz(string orden, int** matriz, int tam)
+template <typename T>
+void Operaciones::llenarMatriz(string orden, T** matriz, int tam)
 {
 	int i, j, check = 0, val;
 	string valor;
@@ -136,7 +139,8 @@ void Operaciones::llenarMatriz(string orden, int** matriz, int tam)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Operaciones::llenarMatrizAleatoria(int** matriz, int tam)
+template <typename T>
+void Operaciones::llenarMatrizAleatoria(T** matriz, int tam)
 {
 	srand(time(NULL));
 
@@ -157,16 +161,16 @@ void Operaciones::llenarMatrizAleatoria(int** matriz, int tam)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Operaciones::imprimir(int** matriz, int tam)
+template <typename T>
+void Operaciones::imprimir(T** matriz, int tam)
 {
 	for (int i = 0; i < tam; i++)
 	{
 		for (int j = 0; j < tam; j++)
 		{
-			printf("%d", *(*(matriz + i) + j));
-			printf("%*s", j + 5, "");
+			cout << *(*(matriz + i) + j) << "\t";;
 		}
-		printf("\n");
+		cout << "\n";
 	}
 }
 
@@ -193,7 +197,8 @@ int** Operaciones::crearMatriz(int tam)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Operaciones::copiarMatriz(int **matriz2, int **matriz1, int tam)
+template <typename T, typename T2>
+void Operaciones::copiarMatriz(T **matriz2, T2 **matriz1, int tam)
 {
 	for(int i = 0; i < tam; i++)
     {
